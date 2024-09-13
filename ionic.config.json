@@ -1,0 +1,7 @@
+{
+  "name": "shonap",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
