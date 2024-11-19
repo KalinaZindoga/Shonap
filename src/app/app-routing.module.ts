@@ -3,9 +3,22 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'tem',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
+  { 
+    path: 'login',
+    loadChildren: () => import('./auth/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'sign-up',
+    loadChildren: () => import('./auth/sign-up/sign-up.module').then( m => m.SignUpPageModule)
+  },
+  {
+    path: 'forgot-password',
+    loadChildren: () => import('./auth/forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
+  },
+
   
 ];
 @NgModule({
