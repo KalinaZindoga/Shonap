@@ -18,6 +18,11 @@ const routes: Routes = [
     path: 'forgot-password',
     loadChildren: () => import('./auth/forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
   },
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  }
 
   
 ];

@@ -17,9 +17,9 @@ margin-left: 20px;
   margin-top: 90px;
 }
   .password {
-    text-align: right;
+    text-align: center;
     font-weight: 50;
-    margin-bottom: 60px;
+    margin-bottom: 10px;
   }
 
   .background {
@@ -45,4 +45,20 @@ margin-left: 20px;
 
 .Login {
   font-size: 20px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.btn{
+  margin-top: 20px;
+ 
+}
+
+
+.link{
+  text-decoration: none;
+  text-align: center;
+  margin-top: 15px;
 }
