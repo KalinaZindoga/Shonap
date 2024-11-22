@@ -2,7 +2,7 @@
     position: center;
   align-content: center;
 border-radius: 5px;
-width: 300px; 
+width: 250px; 
 margin-left: 20px;
 }
 
@@ -11,10 +11,31 @@ margin-left: 20px;
   
 }
   .secbtn {
-    background-color:white
+    background-color: #f0f0f0;
   }
 
   .password {
     text-align: right;
     font-weight: 50;
+  }
+
+  .background {
+    background-color: #f0f0f0;
+  }
+
+  .login {
+    background-color: #0099ff;
+    color: white;
+    border-radius: 5px;
+    width: 300px;
+    margin-left: 20px;
+  }
+
+  .forgot {
+    text-align: center;
+    font-weight: 50;
+  }
+
+  .signup {
+    
   }
