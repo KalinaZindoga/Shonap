@@ -17,16 +17,14 @@ const routes: Routes = [
         loadChildren: () => import('../pages/about/about.module').then( m => m.AboutPageModule)
       },
       {
-        path: 'home',
-        loadChildren: () => import('../pages/home/home.module').then( m => m.HomePageModule)
-      },
-    
-      {
-        path: '',
-        redirectTo: '/pages/home',
-        pathMatch: 'full'
+        path: 'dash',
+        loadChildren: () => import('../pages/dash/dash.module').then( m => m.DashPageModule)
       }
-
+      // {
+      //   path: '',
+      //   redirectTo: '/pages/home',
+      //   pathMatch: 'full'
+      // }
     ]
   },
   {
