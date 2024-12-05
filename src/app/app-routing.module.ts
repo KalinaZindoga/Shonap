@@ -19,13 +19,18 @@ const routes: Routes = [
     path: 'forgot-password',
     loadChildren: () => import('./auth/forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
   },
+
+  {
+    path: 'home',
+    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
+  },
+
   {
     path: '',
     redirectTo: 'login',
     pathMatch: 'full'
   }
 
-  
 ];
 @NgModule({
   imports: [
