@@ -19,6 +19,10 @@ const routes: Routes = [
       {
         path: 'dash',
         loadChildren: () => import('../pages/dash/dash.module').then( m => m.DashPageModule)
+      },
+      {
+        path: 'play',
+        loadChildren: () => import('../pages/play/play.module').then( m => m.PlayPageModule)
       }
       // {
       //   path: '',

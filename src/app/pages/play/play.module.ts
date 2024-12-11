@@ -4,19 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { DashPageRoutingModule } from './dash-routing.module';
+import { PlayPageRoutingModule } from './play-routing.module';
 
-import { DashPage } from './dash.page';
-import { RouterModule } from '@angular/router';
+import { PlayPage } from './play.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    DashPageRoutingModule,
-    RouterModule
+    PlayPageRoutingModule
   ],
-  declarations: [DashPage]
+  declarations: [PlayPage]
 })
-export class DashPageModule {}
+export class PlayPageModule {}

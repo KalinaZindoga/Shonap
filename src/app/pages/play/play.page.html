@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Play</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Play</ion-title>
+    </ion-toolbar>
+  </ion-header>
+   
+  <!-- <ion-item>
+    
+    <ion-chip>Ashley Zindoga</ion-chip>
+  </ion-item> -->
+
+  <p class="text">Level 1</p>
+
+  <ion-img [src]="level1[0].imageUrl" class="img"></ion-img>
+
+
+<ion-row class="ion-align-items-center">
+  <ion-col size="12">
+    <h1 class="text-center" *ngIf="result">{{result}}</h1>
+    <h1 class="text-center" *ngIf="!result">{{'- - -'}}</h1>
+
+  </ion-col>
+  <ion-col *ngFor="let item of level1[1].itemArray;let i = index">
+    <input type="radio" class="btn-check" [name]="item" [id]="'section-'+item" autocomplete="off" (click)="getValue(item, i)" [checked]="checkedValues[i].checked" >
+    <label class="btn px-4 py-2 btn-outline-warning text-2xl" [for]="'section-'+item">{{item}}</label>
+  </ion-col>
+ 
+
+  <ion-col size="12">
+    <ion-button color="danger" (click)="clear()">
+      Clear
+    </ion-button>
+  </ion-col>
+</ion-row>
+</ion-content>
+    
