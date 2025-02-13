@@ -1,5 +1,8 @@
+import { ActivatedRoute } from '@angular/router';
 import { level1 } from './../profile/data';
+import { level2 } from './../profile/data';
 import { Component, OnInit } from '@angular/core';
+import { AlertService } from 'src/app/services/alertservice.service';
 
 @Component({
   selector: 'app-play',
@@ -7,23 +10,60 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./play.page.scss'],
 })
 export class PlayPage implements OnInit {
+  myCurrentLevel:any;
+  myCurrentStage: any;
 
-  result = "";
+checkAnswer() {
+throw new Error('Method not implemented.');
+}
+
+  result = ""; 
+  level2 = level2;
   level1 = level1;
   checkedValues:any = [];
   
-  constructor() {
-    const data = level1[1].itemArray;
-    let i = 0;
-    data.forEach(element => {
-      this.checkedValues.push({ value: 'item' + i, checked: false });
-      i++;
-    });
+  constructor(private route:ActivatedRoute , private alertservice: AlertService) {
+   
    }
 
   ngOnInit() {
+    const level = this.route.snapshot.paramMap.get('level');
+    const stage = this.route.snapshot.paramMap.get('stage');
 
+    if(Number(level)==1){
+      this.myCurrentLevel= this.level1;
+      this.myCurrentLevel.forEach((element:any) => {
+        if(element.stage==stage){
+          this.myCurrentStage =element;
+          console.log(element);
+          let i=0;
+          this.myCurrentStage.itemArray.forEach((elem:any) => {
+            this.checkedValues.push({ value: 'item' + i, checked: false });
+            i++;
+          });
+        }
+      });
+
+
+    }
+    else if(Number(level)==2){
+      this.myCurrentLevel= this.level2;
+    }
+
+ }
+ checkValue() {
+  
+  if (this.result === this.myCurrentStage.item) {
+    this.result = "success";
+    this.alertservice.presentAlert('showresult', 'THIS IS YOUR RESULT', ['SUCCESS']);
+  } else {
+    this.result = "Failed! Please Try again";
+    this.alertservice.presentAlert('showresult', 'THIS IS YOUR RESULT', ['FAILED! PLEASE TRY AGAIN']);
   }
+}
+
+
+    
 
   clear() {
     this.result = "";
@@ -42,9 +82,7 @@ export class PlayPage implements OnInit {
       element.checked = true;
     }
   });
-
     
-
   }
 
 }

@@ -29,24 +29,43 @@
 
   </ion-item>
 
-  <ion-button class="main">LEVEL 1</ion-button> 
+  <ion-card>
+    <ion-card-header>
+
+   
+      
+      <ion-card-title>Level 1</ion-card-title>
+      <ion-card-subtitle>Stages</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <div *ngFor="let i of level1">
+        <ion-button 
+        [class.unlocked]="currentStage >=i.stage" 
+        expand="block" 
+        [disabled]="currentLevel==1 && currentStage!=i.stage"
+        [routerLink]="'/pages/play/'+1+'/'+i.stage"
+        >
+          Stage {{i.stage}}</ion-button>
+
+      </div>
+    </ion-card-content>
+   </ion-card>
+
+   <ion-card>
+    <ion-card-header>
+      <ion-card-title>Level 2</ion-card-title>
+      <ion-card-subtitle>Stages</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <div *ngFor="let i of level2">
+        
+        <ion-button expand="block" [disabled]="true">Stage {{i.stage}}</ion-button>
+      </div>
+    </ion-card-content>
+   </ion-card>
   
-  <div class="levels">
-  <ion-button [disabled]="true" class="btn">LEVEL 2</ion-button>
-  <ion-button [disabled]="true" class="btn">LEVEL 3</ion-button>
-  <br>
-  <ion-button [disabled]="true" class="btn">LEVEL 4</ion-button>
-  <ion-button [disabled]="true" class="btn">LEVEL 5</ion-button>
-  <br>
-  <ion-button [disabled]="true" class="btn">LEVEL 6</ion-button>
-  <ion-button [disabled]="true" class="btn">LEVEL 7</ion-button>
-  <br>
-  <ion-button [disabled]="true" class="btn">LEVEL 8</ion-button>
-  <ion-button [disabled]="true" class="btn">LEVEL 9</ion-button>
 
 
-  </div>
-
-  <ion-button expand="block" routerLink="/pages/play" class="play">PLAY</ion-button>
+  <!-- <ion-button expand="block" routerLink="/pages/play" class="play">PLAY</ion-button> -->
   
 </ion-content>
