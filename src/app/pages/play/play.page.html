@@ -20,12 +20,12 @@
     <h1 class="text-center" *ngIf="!result">{{'- - -'}}</h1>
     
   </ion-col>
-  <ion-col *ngFor="let item of myCurrentStage.itemArray;let i = index">
+  <ion-col  *ngFor="let item of myCurrentStage.itemArray;let i = index">
    
     <input type="radio" class="btn-check" [name]="item" [id]="'section-'+item" autocomplete="off" (click)="getValue(item, i)" [checked]="checkedValues[i].checked" >
     <label class="btn px-4 py-2 btn-outline-warning text-2xl" [for]="'section-'+item">{{item}}</label>
 
-    
+
     
 
 </ion-col>
@@ -34,16 +34,13 @@
     </ion-col> -->
 
 <ion-col size="12">
-  <ion-button  (click)="checkAnswer()" >Submit</ion-button>
+  <ion-button  (click)="checkValue()" expand="block" >Submit</ion-button>
 </ion-col>
-
-
-<p *ngIf="result">{{ result }}</p> 
 
 
 
   <ion-col size="12">
-    <ion-button color="danger" (click)="clear()">
+    <ion-button color="danger" expand="block" (click)="clear()">
       Clear
     </ion-button>
   </ion-col>

@@ -51,19 +51,23 @@ throw new Error('Method not implemented.');
     }
 
  }
+ 
  checkValue() {
   
   if (this.result === this.myCurrentStage.item) {
-    this.result = "success";
-    this.alertservice.presentAlert('showresult', 'THIS IS YOUR RESULT', ['SUCCESS']);
-  } else {
-    this.result = "Failed! Please Try again";
-    this.alertservice.presentAlert('showresult', 'THIS IS YOUR RESULT', ['FAILED! PLEASE TRY AGAIN']);
+  
+    this.alertservice.presentAlert('SUCCESS');
+  } 
+
+  if (this.myCurrentStage === this.myCurrentLevel.stages) {
+  
+    this.myCurrentLevel++; 
+    this.myCurrentStage = 1; 
+  } else { 
+    
+    this.myCurrentStage++; 
   }
 }
-
-
-    
 
   clear() {
     this.result = "";
@@ -81,8 +85,8 @@ throw new Error('Method not implemented.');
     if(element.value == 'item'+index){
       element.checked = true;
     }
-  });
+  })
     
   }
-
+ 
 }
