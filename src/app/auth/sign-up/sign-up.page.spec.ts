@@ -1,5 +1,7 @@
+import { ReactiveFormsModule, FormBuilder, FormControl,FormGroup, Validators } from '@angular/forms';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { SignUpPage } from './sign-up.page';
+
 
 describe('SignUpPage', () => {
   let component: SignUpPage;

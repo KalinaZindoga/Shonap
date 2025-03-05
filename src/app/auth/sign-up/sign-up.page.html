@@ -3,22 +3,22 @@
     <ion-title>sign-up</ion-title>
   </ion-toolbar>
 </ion-header> -->
-
-<ion-content [fullscreen]="true" class="backround">
+<form [formGroup]="shonap" (ngSubmit)="onSubmit()">
+<ion-content [fullscreen]="true" class="backround" >
   <p class="create">Create Account</p>
     <p class="child">Guardian must assist the child in <br> creating the account</p>
 
   <div class="all">
  
-    <ion-input label="Email or phone_number" label-placement="floating" fill="outline" placeholder="Enter text" class="username"></ion-input>
+    <ion-input id="email" formControlName="email" label="Email or phone_number" label-placement="floating" fill="outline" placeholder="Enter text" class="username"></ion-input>
     <br>
   
-    <ion-input label="Password" label-placement="floating" fill="outline" placeholder="Enter text" class="username"></ion-input>
+    <ion-input id="password" formControlName="password" label="Password" label-placement="floating" fill="outline" placeholder="Enter text" class="username"></ion-input>
     <br>
-    <ion-input label="Username" label-placement="floating" fill="outline" placeholder="Enter text" class="username"></ion-input>
+    <ion-input id="username"  formControlName="username"label="Username" label-placement="floating" fill="outline" placeholder="Enter text" class="username"></ion-input>
     <br>
   
-    <ion-button expand="block" class="username">Create account</ion-button>
+    <ion-button type="submit" expand="block" class="btn">Create account</ion-button>
     
     <a  routerLink="/auth/login">Already have an account? Log in</a>
   
