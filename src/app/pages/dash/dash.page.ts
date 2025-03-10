@@ -16,7 +16,6 @@ export class DashPage implements OnInit {
   currentStage  =0;
  
  
-
   constructor(private route:ActivatedRoute) {
   //  take url params in angular
 

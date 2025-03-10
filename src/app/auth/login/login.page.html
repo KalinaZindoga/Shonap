@@ -13,8 +13,11 @@
   </ion-header>
   
 
+  <form [formGroup]="shonap" (ngSubmit)="onSubmit()">
   <ion-card class="card">
     <ion-card-header>
+
+     
       <ion-card-title class="welcome">Welcome Back </ion-card-title>
       
 
@@ -24,19 +27,19 @@
     </ion-card-content>
  
 
-  
   <div >
-  <ion-input label="Username " label-placement="floating" fill="outline" placeholder="Enter text" class="username"></ion-input>
+  <ion-input type="text" formControlName="username" label="Username " label-placement="floating" fill="outline" placeholder="Enter text" class="username"></ion-input>
   <br>
-<ion-input label="Password" label-placement="floating" fill="outline" placeholder="Enter text" class="username"></ion-input>
-<ion-button expand="block" class="username" routerLink="/pages/dash">Login</ion-button>
+<ion-input type="text" formControlName="password" label="Password" label-placement="floating" fill="outline" placeholder="Enter text" class="username"></ion-input>
+<ion-button expand="block" class="username" type="submit">Login</ion-button>
 </div>
 
-<a class="link" routerLink="/auth/forgot-password">Forgot Password?</a>
-<a class="link" routerLink="/auth/sign-up">Dont have an account? Sign-up</a>
+<a class="link" type="submit" routerLink="/auth/forgot-password">Forgot Password?</a>
+<a class="link" type="submit" routerLink="/auth/sign-up">Dont have an account? Sign-up</a>
 
 
 </ion-card-header>
 </ion-card>
+</form>
 </ion-content>
   
