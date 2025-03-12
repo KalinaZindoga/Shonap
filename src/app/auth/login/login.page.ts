@@ -11,14 +11,21 @@ import { Storage } from '@capacitor/storage';
 export class LoginPage implements OnInit { 
 
   shonap = new FormGroup({
-    username: new FormControl('', [Validators.required, Validators.minLength(5)]),
-    password: new FormControl('', [Validators.required, Validators.minLength(5)]),
+    username: new FormControl('', [Validators.required]),
+    password: new FormControl('', [Validators.required]),
   });
   
+  loggedIn: boolean = false;
+
   constructor(private router:Router) { }
 
   ngOnInit() {
-    console.log(this.shonap.value);
+    this.getValue('loggedIn').then(value => {
+      if (value === 'true') {
+        this.loggedIn = true;
+        this.router.navigate(['/pages/dash']);
+      }
+    });
   }
 
   async setValue(key: string, value: string) { 
@@ -35,12 +42,19 @@ export class LoginPage implements OnInit {
 
   onSubmit() {
     if (this.shonap.valid) {
-      // Store username and password in storage
-      this.setValue('username', this.shonap.value.username!);
-      this.setValue('password', this.shonap.value.password!);
-      this.router.navigate(['/pages']);
-      // Optionally, retrieve and log the stored values
- 
+      // Retrieve stored username and password
+      this.getValue('username').then(storedUsername => {
+        this.getValue('password').then(storedPassword => {
+          if (storedUsername === this.shonap.value.username && storedPassword === this.shonap.value.password) {
+            this.loggedIn = true;
+            this.setValue('loggedIn', 'true');
+            this.router.navigate(['/pages/dash']);
+          } else {
+            console.log('Invalid username or password');
+            alert('Invalid username or password');
+          }
+        });
+      });
     } else {
       console.log('Form is invalid');
     }

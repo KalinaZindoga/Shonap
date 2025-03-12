@@ -1,21 +1,21 @@
 export const level1 = [
     {
         stage:1,
-        item: 'HU',
-        itemArray: ['U','H',],
+        item: 'HUKU',
+        itemArray: ['U','H','K','U'],
         imageUrl: 'assets/level1/hen.jpg'
     },
     {
         stage:2,
-        item: 'PIG',
-        itemArray: ['P', 'I', 'G'],
+        item: 'DOMASI',
+        itemArray: ['M', 'O', 'A', 'S', 'I', 'D'],
         imageUrl: 'assets/level1/hen.jpg'
     },
     
     {
         stage:3,
-        item: 'HUKU',
-        itemArray: ['H', 'U', 'K', 'U'],
+        item: 'MOMBE',
+        itemArray: ['E', 'M', 'O', 'M', 'B'],
         imageUrl: 'assets/level1/hen.jpg'
     },
       

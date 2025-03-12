@@ -8,6 +8,11 @@ import { Storage } from '@capacitor/storage';
 })
 export class ProfilePage implements OnInit {
 
+  username: string = '';
+  currentStage: string = '';
+  currentLevel: string = '';
+  androidVersion: string = ''; // Add a property to store the Android version
+
   constructor() { }
 
   async getValue(key: string) {
@@ -15,9 +20,22 @@ export class ProfilePage implements OnInit {
     return value;
   }
 
+
+
+
   ngOnInit() {
-    this.getValue('username').then(value => console.log('Stored username:', value));
-    this.getValue('password').then(value => console.log('Stored password:', value));
+    this.getValue('username').then(value => {
+      this.username = value ?? '';
+      console.log('Stored username:', value);
+    }); 
+    this.getValue('currentStage').then(value => {
+      this.currentStage = value ?? '';
+      console.log('Stored current stage:', value);
+    });
+    this.getValue('currentLevel').then(value => {
+      this.currentLevel = value ?? '';
+      console.log('Stored current level:', value);
+    });
   }
 
 }

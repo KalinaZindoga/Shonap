@@ -15,14 +15,14 @@
 
 <ion-row class="ion-align-items-center">
   <ion-col size="12">
-  <ion-img class="pic" [src]="myCurrentStage?.imageUrl"></ion-img>
+  <ion-img class="pic" [src]="myCurrentStage.imageUrl"></ion-img>
     <h1 class="text-center" *ngIf="result">{{result}}</h1>
     <h1 class="text-center" *ngIf="!result">{{'- - -'}}</h1>
     
   </ion-col>
-  <ion-col  *ngFor="let item of myCurrentStage.itemArray;let i = index">
+  <ion-col  *ngFor="let item of myCurrentStage?.itemArray;let i = index">
    
-    <input type="radio" class="btn-check" [name]="item" [id]="'section-'+item" autocomplete="off" (click)="getValue(item, i)" [checked]="checkedValues[i].checked" >
+    <input type="radio" class="btn-check" [name]="item" [id]="'section-'+item" autocomplete="off" (click)="getData(item, i)" [checked]="checkedValues[i].checked" >
     <label class="btn px-4 py-2 btn-outline-warning text-2xl" [for]="'section-'+item">{{item}}</label>
 
 

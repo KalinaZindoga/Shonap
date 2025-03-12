@@ -17,12 +17,16 @@ import { Router } from '@angular/router';
 export class SignUpPage implements OnInit {
   
 shonap = new FormGroup({
-  email: new FormControl('',[Validators.required, Validators.email]),
-  username: new FormControl('',[Validators.required, Validators.minLength(6)]),
-  password: new FormControl('',[Validators.required, Validators.minLength(6)]),
+ 
+  fullName: new FormControl('',[Validators.required]),
+  childName: new FormControl('',[Validators.required]),
+  relationship: new FormControl('',[Validators.required]),
+  username: new FormControl('',[Validators.required]),
+  password: new FormControl('',[Validators.required]),
+
 });
 
-  constructor() {
+  constructor(private router: Router) {
   
    }
 
@@ -42,17 +46,24 @@ shonap = new FormGroup({
   }
   
     onSubmit() {
-      console.log(this.shonap.value);
   
       // Store email, username, and password in storage
-      this.setValue('email', this.shonap.value.email!);
+      this.setValue('fullName', this.shonap.value.fullName!);
+      this.setValue('childName', this.shonap.value.childName!);
+      this.setValue('relationship', this.shonap.value.relationship!);
       this.setValue('username', this.shonap.value.username!);
       this.setValue('password', this.shonap.value.password!);
+      
+       this.router.navigate(['/auth/login']);
   
       // retrieve and log the stored values
-      this.getValue('email').then(value => console.log('email:', value));
-      this.getValue('username').then(value => console.log(' username:', value));
-      this.getValue('password').then(value => console.log('password:', value));
+      
+      // this.getValue('fullName').then(value => console.log('fullName:', value));
+      // this.getValue('childName').then(value => console.log('childName:', value));
+      // this.getValue('relationship').then(value => console.log('relationship:',
+      // value));
+      // this.getValue('username').then(value => console.log(' username:', value));
+      // this.getValue('password').then(value => console.log('password:', value));
     }
   }
 
