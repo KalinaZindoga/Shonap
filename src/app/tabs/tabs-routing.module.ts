@@ -21,7 +21,7 @@ const routes: Routes = [
         loadChildren: () => import('../pages/dash/dash.module').then( m => m.DashPageModule)
       },
       {
-        path: 'play/:stage/:level',
+        path: 'play/:level/:stage',
         loadChildren: () => import('../pages/play/play.module').then( m => m.PlayPageModule)
       }
       // {

@@ -36,9 +36,9 @@ export class DashPage implements OnInit {
   }
 
   getLevelAndStage(){
-      const level = this.getValue('currentLevel').then(value => console.log('Stored level:', value));
+      const level = this.getValue('currentLevel').then(value => this.currentLevel = value?Number(value):1);
       const stage = this.getValue('currentStage').then(value =>
-        this.currentStage = Number(value)
+        this.currentStage = value?Number(value):1
       );
      
   }

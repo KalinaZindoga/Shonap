@@ -9,7 +9,7 @@ export const level1 = [
         stage:2,
         item: 'DOMASI',
         itemArray: ['M', 'O', 'A', 'S', 'I', 'D'],
-        imageUrl: 'assets/level1/hen.jpg'
+        imageUrl: 'assets/level1/food.jpg'
     },
     
     {

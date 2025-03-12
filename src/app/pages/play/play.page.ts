@@ -30,11 +30,10 @@ export class PlayPage implements OnInit {
     const stage = this.route.snapshot.paramMap.get('stage');
 
     if(Number(level)==1){
-      this.myCurrentLevel= this.level1;
-      this.myCurrentLevel.forEach((element:any) => {
+      this.myCurrentLevel= level1;
+      this.myCurrentLevel.forEach((element: any) => {
         if(element.stage==stage){
           this.myCurrentStage =element;
-          console.log(element);
           let i=0;
           this.myCurrentStage.itemArray.forEach((elem:any) => {
             this.checkedValues.push({ value: 'item' + i, checked: false });
@@ -42,7 +41,6 @@ export class PlayPage implements OnInit {
           });
         }
       });
-
 
     }
     else if(Number(level)==2){
