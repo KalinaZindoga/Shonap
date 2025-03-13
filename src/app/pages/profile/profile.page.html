@@ -1,37 +1,27 @@
 <ion-content>
-<ion-item>
-
-
-<div>
-<h4>My Profile</h4>
-<div>
-<img src="/assets/old-woman_11067529.png" alt="Profile Picture" class="profile">
-    <p class="username"><strong>Username:</strong> {{ username }}</p>
-    <p class="username"><strong>Current Stage:</strong> {{ currentStage }}</p>
-    <p class="username"><strong>Current Level:</strong> {{ currentLevel }}</p>
-
-</div>
- 
-
-
-<ion-item>
-<ion-icon slot="start" name="settings"></ion-icon>
-<ion-label>Settings</ion-label>
-
-</ion-item>
-
-<ion-item>
-<ion-icon slot="start" name="gift"></ion-icon>
-<ion-label>Score</ion-label>
-
-</ion-item>
-
-<ion-item>
-    <img src="\assets\logout_10973589.png" alt="Profile Picture" class="logout">
-    <ion-icon slot="start" name="logout"></ion-icon>
-    <ion-label>Logout</ion-label>
-    
+    <div>
+      <h4 class="text">My Profile</h4>
+      <div>
+        <img src="/assets/old-woman_11067529.png" alt="Profile Picture" class="profile">
+        <p class="username"><strong>Username:</strong> {{ username }}</p>
+        <p class="username"><strong>Current Stage:</strong> {{ currentStage }}</p>
+        <p class="username"><strong>Current Level:</strong> {{ currentLevel }}</p>
+      </div>
+    </div>
+  
+    <ion-item>
+      <ion-icon slot="start" name="settings"></ion-icon>
+      <ion-label>Settings</ion-label>
     </ion-item>
-</div>
-</ion-item>
-</ion-content>
+  
+    <ion-item>
+      <ion-icon slot="start" name="gift"></ion-icon>
+      <ion-label>Score</ion-label>
+    </ion-item>
+  
+    <ion-item type="submit" (click)="logout()">
+      <img src="/assets/logout_10973589.png" alt="logout" class="logout">
+      <ion-label >Logout</ion-label>
+    </ion-item>
+
+  </ion-content>

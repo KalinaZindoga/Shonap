@@ -65,14 +65,32 @@ async getValue(key: string) {
   
   if (this.result === this.myCurrentStage.item) {
   
-    this.alertservice.presentAlert('SUCCESS');
-    this.setValue('currentLevel', this.myCurrentLevel);
+    this.alertservice.presentAlert('WAGONA');
+
+    if (this.myCurrentStage.stage === this.myCurrentLevel.length) {
+      // Move to the next level
+      const nextLevel = Number(this.route.snapshot.paramMap.get('level')) + 1;
+      this.setValue('currentLevel', nextLevel.toString());
+      this.setValue('currentStage', 'stage');
+      this.router.navigate(['/pages/dash']);
+    }
+
+    else {
+      // Move to the next stage in the current level
+      const currentLevel = this.route.snapshot.paramMap.get('level');
+      this.setValue('currentLevel', this.myCurrentLevel);
     this.setValue('currentStage', this.myCurrentStage.stage+1);
   this.router.navigate(['/pages/dash']);
+    }
+
+   
   } 
   else{
     this.alertservice.presentAlert('Watadza, zama zvakare');
+    this.clear();
   }
+
+
 
   // if (this.myCurrentStage === this.myCurrentLevel.stages) {
   

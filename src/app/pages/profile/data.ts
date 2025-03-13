@@ -21,7 +21,7 @@ export const level1 = [
       
     {
         stage:4,
-        item: 'CAMEL',
+        item: 'HUKU',
         itemArray: ['H', 'U', 'K', 'U'],
         imageUrl: 'assets/level1/hen.jpg'
     }

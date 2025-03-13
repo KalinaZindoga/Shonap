@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Storage } from '@capacitor/storage';
+import { Router } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -13,7 +15,17 @@ export class ProfilePage implements OnInit {
   currentLevel: string = '';
   androidVersion: string = ''; // Add a property to store the Android version
 
-  constructor() { }
+  constructor(private router: Router) { }
+
+  logout() {
+    // Clear user data from storage
+    Storage.clear().then(() => {
+      // Navigate to the login page
+      this.router.navigate(['/auth/login']);
+    });
+  }
+
+
 
   async getValue(key: string) {
     const { value } = await Storage.get({ key: key });
