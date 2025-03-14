@@ -14,10 +14,8 @@
 
   <ion-card>
     <ion-card-header>
-
-   
-      <ion-card-title>Level 1</ion-card-title>
-      <ion-card-subtitle>Stages</ion-card-subtitle>
+      <ion-card-title>Level 1  </ion-card-title>
+      <ion-card-subtitle>Stages  Category:Mhuka</ion-card-subtitle>
     </ion-card-header>
     <ion-card-content>
       <div *ngFor="let i of level1">
@@ -29,16 +27,15 @@
         >
           Stage {{i.stage}}</ion-button>
           
-
       </div>
     </ion-card-content>
    </ion-card>
 
+
    <ion-card>
     <ion-card-header>
-      <ion-card-title>Level 2
-      </ion-card-title>
-      <ion-card-subtitle>Stages</ion-card-subtitle>
+      <ion-card-title>Level 2      </ion-card-title>
+      <ion-card-subtitle>Stages  Category:Chikafu </ion-card-subtitle>
     </ion-card-header>
     <ion-card-content>
       <div *ngFor="let i of level2">
@@ -50,10 +47,31 @@
             <ion-button expand="block" [disabled]="true">Stage {{i.stage}}</ion-button> 
           </div>
         </ion-card-content>
-      
-   
+
+        <ion-card-content>
+
+        </ion-card-content>
+
    </ion-card>
-  
+
+   <ion-card>
+    <ion-card-header>
+      <ion-card-title>Level 3  
+      </ion-card-title>
+      <ion-card-subtitle>Stages  Category:Mitezo yemuviri</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <div *ngFor="let i of level2">
+        
+        <div *ngIf="currentStage >=i.stage" class="unlocked">
+      
+        </div>
+            <ion-button expand="block" [disabled]="true">Stage {{i.stage}}</ion-button> 
+          </div>
+        </ion-card-content>
+
+   </ion-card>
+
  <!-- <ion-button expand="block" routerLink="/pages/play" class="play">PLAY</ion-button>  -->
   
 </ion-content>

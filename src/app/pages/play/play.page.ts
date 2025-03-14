@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { AlertService } from 'src/app/services/alertservice.service';
 import { Storage } from '@capacitor/storage';
 
+
 @Component({
   selector: 'app-play',
   templateUrl: './play.page.html',
@@ -47,6 +48,9 @@ export class PlayPage implements OnInit {
       this.myCurrentLevel= this.level2;
     }
 
+    console.log("current level ",this.myCurrentLevel);
+    console.log("current stage ",this.myCurrentStage);
+
  }
 
  async setValue(key: string, value: string) {
@@ -60,28 +64,21 @@ async getValue(key: string) {
   const { value } = await Storage.get({ key: key });
   return value;
 }
+
  
  checkValue() {
   
   if (this.result === this.myCurrentStage.item) {
   
     this.alertservice.presentAlert('WAGONA');
-
-    if (this.myCurrentStage.stage === this.myCurrentLevel.length) {
-      // Move to the next level
-      const nextLevel = Number(this.route.snapshot.paramMap.get('level')) + 1;
-      this.setValue('currentLevel', nextLevel.toString());
-      this.setValue('currentStage', 'stage');
+    console.log("current level*** ",this.myCurrentLevel.length);
+    console.log("current stage** ",this.myCurrentStage.stage);
+    if(this.myCurrentLevel.length>this.myCurrentStage.stage){
+      this.setValue('currentStage',JSON.stringify(Number(this.myCurrentStage.stage)+1));
+     this.alertservice.setLevel(Number(this.myCurrentStage)+1);
       this.router.navigate(['/pages/dash']);
     }
 
-    else {
-      // Move to the next stage in the current level
-      const currentLevel = this.route.snapshot.paramMap.get('level');
-      this.setValue('currentLevel', this.myCurrentLevel);
-    this.setValue('currentStage', this.myCurrentStage.stage+1);
-  this.router.navigate(['/pages/dash']);
-    }
 
    
   } 
@@ -89,17 +86,6 @@ async getValue(key: string) {
     this.alertservice.presentAlert('Watadza, zama zvakare');
     this.clear();
   }
-
-
-
-  // if (this.myCurrentStage === this.myCurrentLevel.stages) {
-  
-  //   this.myCurrentLevel++; 
-  //   this.myCurrentStage = 1; 
-  // } else { 
-    
-  //   this.myCurrentStage++; 
-  // }
 }
 
   clear() {
