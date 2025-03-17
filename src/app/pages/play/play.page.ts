@@ -12,6 +12,12 @@ import { Storage } from '@capacitor/storage';
   styleUrls: ['./play.page.scss'],
 })
 export class PlayPage implements OnInit {
+getProgressPercentage() {
+throw new Error('Method not implemented.');
+}
+level1Completed(): any {
+throw new Error('Method not implemented.');
+}
   myCurrentLevel:any;
   myCurrentStage: any;
   result = ""; 
@@ -53,6 +59,10 @@ export class PlayPage implements OnInit {
 
  }
 
+ async removeName(name:any){
+  await Storage.remove({ key: name });
+}
+
  async setValue(key: string, value: string) {
   await Storage.set({
     key: key,
@@ -71,12 +81,22 @@ async getValue(key: string) {
   if (this.result === this.myCurrentStage.item) {
   
     this.alertservice.presentAlert('WAGONA');
+
     console.log("current level*** ",this.myCurrentLevel.length);
     console.log("current stage** ",this.myCurrentStage.stage);
     if(this.myCurrentLevel.length>this.myCurrentStage.stage){
       this.setValue('currentStage',JSON.stringify(Number(this.myCurrentStage.stage)+1));
      this.alertservice.setLevel(Number(this.myCurrentStage)+1);
       this.router.navigate(['/pages/dash']);
+    }
+    if(this.myCurrentLevel.length==this.myCurrentStage.stage){
+      this.removeName('currentLevel');
+      this.removeName('currentStage');
+      this.setValue('currentStage',JSON.stringify(1));
+      this.setValue('currentLevel',JSON.stringify(Number(this.myCurrentLevel)+1));
+      this.alertservice.setLevel(1);
+      this.alertservice.setStage(1);
+       this.router.navigate(['/pages/dash']);
     }
 
 
@@ -107,5 +127,5 @@ async getValue(key: string) {
   })
     
   }
- 
+
 }

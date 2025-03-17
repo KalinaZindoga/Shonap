@@ -24,7 +24,8 @@ export const level1 = [
         item: 'NYOKA',
         itemArray: ['A', 'K', 'O', 'Y', 'N'],
         imageUrl: 'assets/level1/nyoka.jpg'
-    }
+    },
+
 ];
 
 export const level2= [
@@ -49,12 +50,7 @@ export const level2= [
         imageUrl: 'assets/level1/hand.jpg'
     },
 
-    {
-        stage:4,
-        item: 'HAND',
-        itemArray: ['H', 'A', 'N', 'D'],
-        imageUrl: 'assets/level1/hand.jpg'
-    }
+    
 ];
 
 export const level3= [

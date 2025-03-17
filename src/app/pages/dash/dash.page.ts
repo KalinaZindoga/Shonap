@@ -5,6 +5,7 @@ import { level3 } from './../profile/data';
 import { ActivatedRoute } from '@angular/router';
 import { Storage } from '@capacitor/storage';
 import { AlertService } from 'src/app/services/alertservice.service';
+import { IonProgressBar } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-dash',
@@ -14,11 +15,15 @@ import { AlertService } from 'src/app/services/alertservice.service';
 
 export class DashPage implements OnInit {
   
+public progress=0;
+
+
   level3=level3;
   level2 = level2;
   level1 = level1;
   currentLevel =0;
   currentStage  =0;
+
  
  
   constructor(
@@ -27,9 +32,7 @@ export class DashPage implements OnInit {
   ) {
   //  take url params in angular
 
-  
-   }
-   
+  }
   ngOnInit() {
     this.getLevelAndStage();
   }
@@ -43,13 +46,22 @@ export class DashPage implements OnInit {
       this.alertService.currentLevelState$.subscribe(level => {
         this.currentLevel = level;
         console.log("current level ",level)
+        this.updateProgress();
       });
       this.alertService.currentStageState$.subscribe(stage => {
         this.currentStage = stage;
         console.log("current stage ",stage)
+        this.updateProgress();
       });
      
   }
+
+  updateProgress() {
+    const totalStages = 4; // Since there are 10 stages
+    this.progress = (this.currentStage / totalStages) * 100;
+  }
+
+
 
   async getValue(key: string) {
     const { value } = await Storage.get({ key: key });
@@ -57,4 +69,8 @@ export class DashPage implements OnInit {
   }
   
 
+  check(data:any,level:number){
+    console.log(data, this.currentLevel);
+    return Boolean(level== this.currentLevel);
+  }
 }

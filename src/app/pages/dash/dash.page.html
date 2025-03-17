@@ -11,7 +11,8 @@
     </ion-toolbar>
   </ion-header>
 
-
+  <ion-progress-bar class="bar" [value]="progress / 100"></ion-progress-bar>
+      <p class="text-center">{{ progress }}% completed</p>
   <ion-card>
     <ion-card-header>
       <ion-card-title>Level 1  </ion-card-title>
@@ -39,18 +40,17 @@
     </ion-card-header>
     <ion-card-content>
       <div *ngFor="let i of level2">
-        
-        <div *ngIf="currentStage >=i.stage" class="unlocked">
-      
-    
-        </div>
-            <ion-button expand="block" [disabled]="true">Stage {{i.stage}}</ion-button> 
-          </div>
-        </ion-card-content>
-
-        <ion-card-content>
-
-        </ion-card-content>
+        <!--  -->
+        <ion-button
+        [class.unlocked]="currentStage >=i.stage" 
+        expand="block" 
+        [disabled]="!check(i.stage,2)"
+        [routerLink]="'/pages/play/'+1+'/'+i.stage"
+        >
+          Stage {{i.stage}}</ion-button>
+          
+      </div>
+    </ion-card-content>
 
    </ion-card>
 
