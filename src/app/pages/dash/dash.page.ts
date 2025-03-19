@@ -45,24 +45,27 @@ public progress=0;
 
       this.alertService.currentLevelState$.subscribe(level => {
         this.currentLevel = level;
-        console.log("current level ",level)
-        this.updateProgress();
+        console.log("current level in dash ",level)
+        this.updateProgress()
       });
       this.alertService.currentStageState$.subscribe(stage => {
         this.currentStage = stage;
-        console.log("current stage ",stage)
-        this.updateProgress();
+        console.log("current stage in dash",stage)
+        this.updateProgress()
       });
+
      
   }
 
   updateProgress() {
-    const totalStages = 4; // Since there are 10 stages
+    const totalStages = 10; // Since there are 10 stages
     this.progress = (this.currentStage / totalStages) * 100;
+    if (this.currentStage !== undefined && totalStages > 0) {
+      this.progress = (this.currentStage / totalStages) * 100;
+      console.log("Progress updated to:", this.progress);
   }
 
-
-
+  }
   async getValue(key: string) {
     const { value } = await Storage.get({ key: key });
     return value;
@@ -74,3 +77,5 @@ public progress=0;
     return Boolean(level== this.currentLevel);
   }
 }
+
+

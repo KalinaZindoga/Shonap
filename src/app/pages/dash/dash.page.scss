@@ -5,8 +5,9 @@ height: 50px;
 }
 
 .levels{
-    margin-top: 10px;
-    margin-left: 70px;
+    --margin-top: 10px;
+    --margin-left: 70px;
+   --background-color: #d60fd6;
 }
 
 .main{
@@ -23,4 +24,10 @@ height: 50px;
    margin-top: 30px;
     margin-left:100px;
     border-radius: 10px;
+}
+
+.all{
+    --background: #c589be;
+  --color: #0d0909;
+  --border-radius: 10px;
 }

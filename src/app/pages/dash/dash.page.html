@@ -3,7 +3,7 @@
     <ion-title>dash</ion-title>
 </ion-toolbar>
 </ion-header>
-<ion-content>
+<ion-content class="all" [fullscreen]="true">
 
   <ion-header collapse="condense">
     <ion-toolbar>
@@ -23,7 +23,7 @@
         <ion-button
         [class.unlocked]="currentStage >=i.stage" 
         expand="block" 
-        [disabled]="i.stage>currentStage"
+        [disabled]="currentLevel>1?false: i.stage>currentStage"
         [routerLink]="'/pages/play/'+1+'/'+i.stage"
         >
           Stage {{i.stage}}</ion-button>
@@ -44,7 +44,7 @@
         <ion-button
         [class.unlocked]="currentStage >=i.stage" 
         expand="block" 
-        [disabled]="!check(i.stage,2)"
+        [disabled]="currentLevel>2?false:i.stage>currentStage"
         [routerLink]="'/pages/play/'+1+'/'+i.stage"
         >
           Stage {{i.stage}}</ion-button>

@@ -24,6 +24,7 @@ throw new Error('Method not implemented.');
   level2 = level2;
   level1 = level1;
   checkedValues:any = [];
+  progress = 0; // Add a progress property to track progress percentage
   
   constructor(
     private route:ActivatedRoute,
@@ -51,13 +52,14 @@ throw new Error('Method not implemented.');
 
     }
     else if(Number(level)==2){
-      this.myCurrentLevel= this.level2;
+      this.myCurrentLevel= level2;
     }
 
     console.log("current level ",this.myCurrentLevel);
     console.log("current stage ",this.myCurrentStage);
 
  }
+
 
  async removeName(name:any){
   await Storage.remove({ key: name });
@@ -76,33 +78,32 @@ async getValue(key: string) {
 }
 
  
- checkValue() {
-  
+async checkValue() {
   if (this.result === this.myCurrentStage.item) {
-  
-    this.alertservice.presentAlert('WAGONA');
+    await this.alertservice.presentAlert('WAGONA'); // Wait for the success alert to complete
 
-    console.log("current level*** ",this.myCurrentLevel.length);
-    console.log("current stage** ",this.myCurrentStage.stage);
-    if(this.myCurrentLevel.length>this.myCurrentStage.stage){
-      this.setValue('currentStage',JSON.stringify(Number(this.myCurrentStage.stage)+1));
-     this.alertservice.setLevel(Number(this.myCurrentStage)+1);
+
+    
+    console.log("current level*** ", this.myCurrentLevel.length);
+    console.log("current stage** ", this.myCurrentStage.stage);
+
+     if (this.myCurrentLevel.length > this.myCurrentStage.stage) {
+      await this.setValue('currentStage', JSON.stringify(Number(this.myCurrentStage.stage) + 1));
+      this.alertservice.setLevel(Number(this.myCurrentStage) + 1);
       this.router.navigate(['/pages/dash']);
     }
-    if(this.myCurrentLevel.length==this.myCurrentStage.stage){
-      this.removeName('currentLevel');
-      this.removeName('currentStage');
-      this.setValue('currentStage',JSON.stringify(1));
-      this.setValue('currentLevel',JSON.stringify(Number(this.myCurrentLevel)+1));
-      this.alertservice.setLevel(1);
+    else if (this.myCurrentLevel.length == this.myCurrentStage.stage) {
+      console.log('in here');
+      console.log('in here again ', this.myCurrentLevel[0].level+1);
+      await this.removeName('currentLevel');
+      await this.removeName('currentStage');
+      await this.setValue('currentStage', JSON.stringify(1));
+      await this.setValue('currentLevel', JSON.stringify(Number(this.myCurrentLevel[0].level+1)));
+      this.alertservice.setLevel(this.myCurrentLevel[0].level+1);
       this.alertservice.setStage(1);
-       this.router.navigate(['/pages/dash']);
+      this.router.navigate(['/pages/dash']);
     }
-
-
-   
-  } 
-  else{
+  } else {
     this.alertservice.presentAlert('Watadza, zama zvakare');
     this.clear();
   }
