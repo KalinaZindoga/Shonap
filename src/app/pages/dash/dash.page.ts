@@ -58,7 +58,7 @@ public progress=0;
   }
 
   updateProgress() {
-    const totalStages = 10; // Since there are 10 stages
+    const totalStages = 20; // Since there are 20 stages
     this.progress = (this.currentStage / totalStages) * 100;
     if (this.currentStage !== undefined && totalStages > 0) {
       this.progress = (this.currentStage / totalStages) * 100;

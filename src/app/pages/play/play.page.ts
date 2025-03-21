@@ -87,9 +87,14 @@ async checkValue() {
     console.log("current level*** ", this.myCurrentLevel.length);
     console.log("current stage** ", this.myCurrentStage.stage);
 
+
+    // Check if the current stage is less than the total number of stages
      if (this.myCurrentLevel.length > this.myCurrentStage.stage) {
+
+        // Move to the next stage
+
       await this.setValue('currentStage', JSON.stringify(Number(this.myCurrentStage.stage) + 1));
-      this.alertservice.setLevel(Number(this.myCurrentStage) + 1);
+      this.alertservice.setStage(Number(this.myCurrentStage) + 1);
       this.router.navigate(['/pages/dash']);
     }
     else if (this.myCurrentLevel.length == this.myCurrentStage.stage) {

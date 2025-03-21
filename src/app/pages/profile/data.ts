@@ -30,6 +30,56 @@ export const level1 = [
         imageUrl: 'assets/level1/nyoka.jpg'
     },
 
+    {
+        level:1,
+        stage:5,
+        item: 'NYOKA',
+        itemArray: ['A', 'K', 'O', 'Y', 'N'],
+        imageUrl: 'assets/level1/nyoka.jpg'
+    },
+
+    {
+        level:1,
+        stage:6,
+        item: 'ZISO',
+        itemArray: ['Z', 'O', 'I', 'S'],
+        imageUrl: 'assets/level1/nhiyo.jpg'
+    },
+
+    {
+        level:1,
+        stage:7,
+        item: 'NYOKA',
+        itemArray: ['A', 'K', 'O', 'Y', 'N'],
+        imageUrl: 'assets/level1/nyoka.jpg'
+    },
+
+    {
+        level:1,
+        stage:8,
+        item: 'NYOKA',
+        itemArray: ['A', 'K', 'O', 'Y', 'N'],
+        imageUrl: 'assets/level1/nyoka.jpg'
+    },
+
+    {
+        level:1,
+        stage:9,
+        item: 'NYOKA',
+        itemArray: ['A', 'K', 'O', 'Y', 'N'],
+        imageUrl: 'assets/level1/nyoka.jpg'
+    },
+
+    {
+        level:1,
+        stage:10,
+        item: 'NYOKA',
+        itemArray: ['A', 'K', 'O', 'Y', 'N'],
+        imageUrl: 'assets/level1/nyoka.jpg'
+    },
+
+
+
 ];
 
 export const level2= [
