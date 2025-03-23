@@ -2,40 +2,40 @@ export const level1 = [
     {
         level:1,
         stage:1,
-        item: 'NHIYO',
-        itemArray: ['N','O','H','Y','I'],
-        imageUrl: 'assets/level1/nhiyo.jpg',
+        item: 'ZAI',
+        itemArray: ['A','I','Z'],
+        imageUrl: 'assets/level1/zai.jpg',
     },
     {
         level:1,
         stage:2,
-        item: 'NZOU',
-        itemArray: ['N', 'O', 'U', 'Z'],
-        imageUrl: 'assets/level1/nzou.jpg',
+        item: 'ZINO',
+        itemArray: ['O','N','I','Z'],
+        imageUrl: 'assets/level1/zino.jpg',
     },
     
     {
         level:1,
         stage:3,
-        item: 'GARWE',
-        itemArray: ['E', 'G', 'A', 'R', 'W'],
-        imageUrl: 'assets/level1/garwe.jpg'
+        item: 'IMBA',
+        itemArray: ['A', 'M', 'I', 'B'],
+        imageUrl: 'assets/level1/imba.jpg'
     },
       
     {
         level:1,
         stage:4,
-        item: 'NYOKA',
-        itemArray: ['A', 'K', 'O', 'Y', 'N'],
-        imageUrl: 'assets/level1/nyoka.jpg'
+        item: 'INA',
+        itemArray: ['I', 'A', 'N'],
+        imageUrl: 'assets/level1/ina.jpg'
     },
 
     {
         level:1,
         stage:5,
-        item: 'NYOKA',
-        itemArray: ['A', 'K', 'O', 'Y', 'N'],
-        imageUrl: 'assets/level1/nyoka.jpg'
+        item: 'GORE',
+        itemArray: ['G', 'E', 'O', 'R'],
+        imageUrl: 'assets/level1/gore.jpg'
     },
 
     {
@@ -43,31 +43,39 @@ export const level1 = [
         stage:6,
         item: 'ZISO',
         itemArray: ['Z', 'O', 'I', 'S'],
-        imageUrl: 'assets/level1/nhiyo.jpg'
+        imageUrl: 'assets/level1/ziso.jpg'
     },
 
     {
         level:1,
         stage:7,
-        item: 'NYOKA',
-        itemArray: ['A', 'K', 'O', 'Y', 'N'],
-        imageUrl: 'assets/level1/nyoka.jpg'
+        item: 'HOVE',
+        itemArray: ['V', 'E', 'O', 'H'],
+        imageUrl: 'assets/level1/hove.jpg'
     },
 
     {
         level:1,
         stage:8,
-        item: 'NYOKA',
-        itemArray: ['A', 'K', 'O', 'Y', 'N'],
-        imageUrl: 'assets/level1/nyoka.jpg'
+        item: 'HARI',
+        itemArray: ['A', 'I', 'H', 'R'],
+        imageUrl: 'assets/level1/hari.jpg'
     },
 
     {
         level:1,
         stage:9,
-        item: 'NYOKA',
-        itemArray: ['A', 'K', 'O', 'Y', 'N'],
-        imageUrl: 'assets/level1/nyoka.jpg'
+        item: 'MUTI',
+        itemArray: ['I', 'U', 'M', 'T'],
+        imageUrl: 'assets/level1/muti.jpg'
+    },
+
+    {
+        level:1,
+        stage:10,
+        item: 'GARWE',
+        itemArray: ['E', 'G', 'R', 'W','A'],
+        imageUrl: 'assets/level1/garwe.jpg'
     },
 
     {

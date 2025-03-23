@@ -60,11 +60,7 @@ public progress=0;
   updateProgress() {
     const totalStages = 20; // Since there are 20 stages
     this.progress = (this.currentStage / totalStages) * 100;
-    if (this.currentStage !== undefined && totalStages > 0) {
-      this.progress = (this.currentStage / totalStages) * 100;
-      console.log("Progress updated to:", this.progress);
-  }
-
+   
   }
   async getValue(key: string) {
     const { value } = await Storage.get({ key: key });

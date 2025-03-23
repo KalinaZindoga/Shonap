@@ -42,7 +42,7 @@
       <div *ngFor="let i of level2">
         <!--  -->
         <ion-button
-        [class.unlocked]="currentStage >=i.stage" 
+        [class.unlocked]="currentStage >=i.level" 
         expand="block" 
         [disabled]="currentLevel>2?false:i.stage>currentStage"
         [routerLink]="'/pages/play/'+1+'/'+i.stage"

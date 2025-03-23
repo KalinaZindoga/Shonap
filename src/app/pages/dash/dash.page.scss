@@ -1,23 +1,23 @@
-.play{
+::ng-deep .play{
 padding-top: 1px;
 width: 350px;
 height: 50px;
 }
 
-.levels{
+::ng-deep .levels{
     --margin-top: 10px;
     --margin-left: 70px;
    --background-color: #d60fd6;
 }
 
-.main{
+::ng-deep .main{
     margin-top: 100px;
     width: 150px;
     margin-left: 85px;
 
 }
 
-.bar{
+::ng-deep .bar{
     width: 200px;
     height: 30px;
    background-color: rgb(228, 101, 5);
@@ -26,7 +26,7 @@ height: 50px;
     border-radius: 10px;
 }
 
-.all{
+::ng-deep .all{
     --background: #c589be;
   --color: #0d0909;
   --border-radius: 10px;
