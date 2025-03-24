@@ -13,7 +13,7 @@ export class AppComponent implements OnInit{
   
   ngOnInit(): void {
     this.getCurrentState();
-    this.router.navigate(['/auth/login']);
+    // this.router.navigate(['/auth/login']);
   }
 
   async setValue(key: string, value: string) {
