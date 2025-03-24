@@ -80,7 +80,7 @@ export const level1 = [
 
     {
         level:1,
-        stage:10,
+        stage:11,
         item: 'NYOKA',
         itemArray: ['A', 'K', 'O', 'Y', 'N'],
         imageUrl: 'assets/level1/nyoka.jpg'
@@ -94,9 +94,9 @@ export const level2= [
     {
         level:2,
         stage:1,
-        item: 'ZISO',
-        itemArray: ['I', 'Z', 'O','S' ],
-        imageUrl: 'assets/level1/mhuru.jpg'
+        item: 'MHURU',
+        itemArray: ['U', 'R', 'U','H','M' ],
+        imageUrl: 'assets/level1/nyoka.jpg'
         
     },
     

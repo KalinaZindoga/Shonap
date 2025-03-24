@@ -30,7 +30,6 @@ public progress=0;
     private route:ActivatedRoute,
     private alertService:AlertService
   ) {
-  //  take url params in angular
 
   }
   ngOnInit() {
@@ -38,7 +37,6 @@ public progress=0;
   }
 
   getLevel(currentLevel:any,stage:any){
-    // console.log("curre ",currentLevel," stage ",stage)
   }
 
   getLevelAndStage(){
@@ -46,12 +44,12 @@ public progress=0;
       this.alertService.currentLevelState$.subscribe(level => {
         this.currentLevel = level;
         console.log("current level in dash ",level)
-        this.updateProgress()
+        this.updateProgress();
       });
       this.alertService.currentStageState$.subscribe(stage => {
         this.currentStage = stage;
         console.log("current stage in dash",stage)
-        this.updateProgress()
+        this.updateProgress();
       });
 
      
@@ -68,9 +66,17 @@ public progress=0;
   }
   
 
-  check(data:any,level:number){
-    console.log(data, this.currentLevel);
-    return Boolean(level== this.currentLevel);
+  check(level:any,stage:number){
+    // console.log(level, stage);
+
+    // console.log("current level ", this.currentLevel == level);
+    // console.log("current stage ", stage<=this.currentStage
+    // );
+
+   if(this.currentLevel==level && stage<=this.currentStage){
+      return false;
+    }
+    return true;
   }
 }
 

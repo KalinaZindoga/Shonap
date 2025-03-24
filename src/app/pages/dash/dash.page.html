@@ -1,13 +1,13 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>dash</ion-title>
+    <ion-title>My Shona App</ion-title>
 </ion-toolbar>
 </ion-header>
 <ion-content class="all" [fullscreen]="true">
 
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">dash</ion-title>
+      <ion-title size="large">My Shona App </ion-title>
     </ion-toolbar>
   </ion-header>
 
@@ -21,9 +21,9 @@
     <ion-card-content>
       <div *ngFor="let i of level1">
         <ion-button
-        [class.unlocked]="currentStage >=i.stage" 
+       
         expand="block" 
-        [disabled]="currentLevel>1?false: i.stage>currentStage"
+        [disabled]="check(1,i.stage)"
         [routerLink]="'/pages/play/'+1+'/'+i.stage"
         >
           Stage {{i.stage}}</ion-button>
@@ -42,10 +42,9 @@
       <div *ngFor="let i of level2">
         <!--  -->
         <ion-button
-        [class.unlocked]="currentStage >=i.level" 
         expand="block" 
-        [disabled]="currentLevel>2?false:i.stage>currentStage"
-        [routerLink]="'/pages/play/'+1+'/'+i.stage"
+        [disabled]="check(2,i.stage)"
+        [routerLink]="'/pages/play/'+2+'/'+i.stage"
         >
           Stage {{i.stage}}</ion-button>
           
@@ -61,7 +60,7 @@
       <ion-card-subtitle>Stages  Category:HARD</ion-card-subtitle>
     </ion-card-header>
     <ion-card-content>
-      <div *ngFor="let i of level2">
+      <div *ngFor="let i of level3">
         
         <div *ngIf="currentStage >=i.stage" class="unlocked">
       
