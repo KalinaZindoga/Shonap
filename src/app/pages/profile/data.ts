@@ -96,7 +96,7 @@ export const level2= [
         stage:1,
         item: 'MHURU',
         itemArray: ['U', 'R', 'U','H','M' ],
-        imageUrl: 'assets/level1/nyoka.jpg'
+        imageUrl: 'assets/level1/mhuru.jpg'
         
     },
     
@@ -105,18 +105,48 @@ export const level2= [
         stage:2,
         item: 'MHINO',
         itemArray: ['N', 'M', 'I', 'H', 'O'],
-        imageUrl: 'assets/level/mhuru.jpg'
+        imageUrl: 'assets/level/mhino.jpg'
         
     },
     
     {
         level:2,
         stage:3,
-        item: 'MAZINO',
-        itemArray: ['I', 'M', 'A', 'O', 'Z', 'N'],
+        item: 'NYOKA',
+        itemArray: [ 'A', 'N', 'O', 'K', 'Y'],
         imageUrl: 'assets/level2/mazino.jpg'
        
     },
+
+    {
+        level:2,
+        stage:4,
+        item: 'MAPUDZi',
+        itemArray: [ 'Z', 'U', 'P', 'A', 'M','D','Z','I'],
+        imageUrl: 'assets/level2/mapudzi.jpg'
+       
+    },
+
+    {
+        level:2,
+        stage:5,
+        item: 'MATAMBA',
+        itemArray: [ 'A', 'B', 'A', 'M','T','M','B'],
+        imageUrl: 'assets/level2/mapudzi.jpg'
+       
+    },
+
+    {
+        level:2,
+        stage:6,
+        item: 'MAOKO',
+        itemArray: [ 'O', 'K', 'M','A','O'],
+        imageUrl: 'assets/level2/mapudzi.jpg'
+       
+    },
+
+
+
 
     
 ];
